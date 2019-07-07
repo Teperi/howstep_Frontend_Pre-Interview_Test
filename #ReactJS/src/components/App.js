@@ -1,9 +1,9 @@
 /* eslint-disable */
-import React, { Component } from "react";
-import Express from "../views/Express";
-import { connect } from "react-redux";
-import { bindActionCreators } from "redux";
-import * as calcActions from "../store/modules/Calc";
+import React, { Component } from 'react';
+import Express from '../views/Express';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import * as calcActions from '../store/modules/Calc';
 
 class App extends Component {
   constructor(props) {
@@ -20,13 +20,15 @@ class App extends Component {
 
   _handleDetecting = () => {
     this.setState({
-      plus: 30
+      ...this.state,
+      // TODO: 30 에서 33 으로 변경 사유 정확히 기록
+      plus: 33
     });
   };
 
   _handleShow = val => {
     var { CalcActions } = this.props;
-    if (val == "") {
+    if (val == '') {
       return null;
     } else {
       CalcActions.showAction(val);
@@ -37,8 +39,11 @@ class App extends Component {
   setStating() {
     return {
       sNumber: 13,
-      pass: function() {
+      // binding 문제
+      // TODO: 설명 좀더 자세히 기록
+      pass: () => {
         var substract;
+        console.log(this.sNumber);
         return (substract = this.sNumber);
       }
     };
@@ -67,8 +72,8 @@ class App extends Component {
 }
 
 var mapStateToProps = state => ({
-  source: state.Calc.get("source"),
-  show: state.Calc.get("show")
+  source: state.Calc.get('source'),
+  show: state.Calc.get('show')
 });
 
 var mapDispatchToProps = dispatch => ({
