@@ -21,7 +21,8 @@ class App extends Component {
   _handleDetecting = () => {
     this.setState({
       ...this.state,
-      // TODO: 30 에서 33 으로 변경 사유 정확히 기록
+      // plus 값이 30으로 되어있어서 문제 발생
+      // 33으로 수정
       plus: 33
     });
   };
@@ -39,10 +40,13 @@ class App extends Component {
   setStating() {
     return {
       sNumber: 13,
-      // binding 문제
-      // TODO: 설명 좀더 자세히 기록
+      // function 의 경우 this 의 위치가 setStating 함수의 return 값으로 고정됨
+      // 그래서 call 로 this 를 대체하지 못하게 됨
+      // arrow function 은 this 의 탐색 범위를 window 로 넓힌 후 call 을 받아올 수 있음
+      // var 는 let 으로 수정
       pass: () => {
-        var substract;
+        console.log(this);
+        let substract;
         console.log(this.sNumber);
         return (substract = this.sNumber);
       }

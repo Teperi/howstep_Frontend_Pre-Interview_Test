@@ -13,3 +13,13 @@ yarn install
 npm start
 yarn start
 `
+
+## 수정 결과
+
+- 수정된 파일: [App.js](./%23ReactJS/components/App.js)
+  - 26번째 줄 수정
+    - 24~25번째 줄 설명 기록
+    - plus 값을 잘못 넣었을 때 오류 발생
+  - 46~51번째 줄 수정
+    - 43~45번째 줄 설명 기록
+    - function 과 arrow function 의 this가 가지는 binding 차이로 인한 오류 발생

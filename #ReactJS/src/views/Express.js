@@ -4,7 +4,6 @@ import correct from '../assets/icon/correct.png';
 import incorrect from '../assets/icon/incorrect.png';
 
 const Express = props => {
-  console.log(props);
   return props.show ? (
     <div>
       <p style={{ position: 'relative' }}>
