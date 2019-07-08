@@ -8,8 +8,7 @@
 const Moment = require('moment');
 
 const convertParam = params => {
-  // 키는 변경될 수 있으므로 let 으로 변경
-  for (let key in params) {
+  for (const key in params) {
     // for ... in 의 경우 object 프로토타입에 어떤 key:value 가 추가될 경우 그것도 key 로 가지게 되는 문제 발생함
     // 따라서 hasOwnProperty 로 params 가 진짜 가지고있는 property 일 때만 변경이 일어나도록 수정
     if (params.hasOwnProperty(key)) {
